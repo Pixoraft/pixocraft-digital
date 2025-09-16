@@ -12,7 +12,8 @@ import {
   SiInstagram, 
   SiSnapchat, 
   SiYoutube, 
-  SiLinkedin 
+  SiLinkedin,
+  SiWhatsapp
 } from "react-icons/si";
 
 interface ContactFormData {
@@ -72,7 +73,11 @@ export default function ContactSection() {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919876543210", "_blank");
+    // Using a more reliable WhatsApp format
+    const phoneNumber = "919876543210";
+    const message = encodeURIComponent("Hi! I'm interested in your digital marketing services.");
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   const makeCall = () => {
@@ -215,7 +220,7 @@ export default function ContactSection() {
                 className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center"
                 data-testid="button-whatsapp"
               >
-                <SiFacebook className="text-xl mr-3" />
+                <SiWhatsapp className="text-xl mr-3" />
                 WhatsApp Us Now
               </Button>
               <Button 
