@@ -1,0 +1,69 @@
+Build me a modern, static digital marketing agency website for my agency **Pixocraft**.  
+This website is focused on selling **social media handling services** (Facebook, Instagram, Snapchat, YouTube, LinkedIn).  
+Make it visually appealing, professional, and trust-building.
+
+### Website Requirements:
+1. **Hero Section:**
+   - Big bold headline: “Jalandhar’s Best Digital Marketing & Social Media Agency”
+   - Subtext: “Grow your brand with Pixocraft – Affordable, Creative & Result-Oriented.”
+   - CTA Buttons: “Get Free Consultation” and “View Packages”
+
+2. **About Section:**
+   - Short description of Pixocraft (local expertise, creative team, affordable plans)
+   - Highlight: “Premium Plan includes FREE Website worth ₹10,000”
+
+3. **Services Section (Cards Style):**
+   - Social Media Handling
+   - Video Editing & Reels
+   - Thumbnail Design
+   - Ad Campaign Management
+   - Website Development (with Premium Plan)
+   - Add attractive icons for each.
+
+4. **Packages Section (3 Cards – Pricing Table Style):**
+   - **Starter – ₹4,999 / Month**
+     - FB + Insta (8 posts + 2 reels)
+     - Basic Snapchat story posting
+     - Monthly growth report
+   - **Growth – ₹9,999 / Month**
+     - FB + Insta (15 posts + 4 reels)
+     - Snapchat ads (basic)
+     - YouTube 2 videos (upload + SEO)
+     - Bi-weekly report
+   - **Premium – ₹19,999 / Month**
+     - FB + Insta + Snapchat + YouTube handling
+     - 25+ posts + 8 reels + daily stories
+     - Advanced Snapchat ads
+     - YouTube 6 videos (SEO + thumbnails)
+     - Weekly reports + engagement replies
+     - **🎁 Free Business Website**
+
+   → Highlight the Premium plan with a “Most Popular” badge.
+
+5. **Portfolio / Work Samples Section:**
+   - Grid style thumbnails (placeholders for now)
+   - Section title: “Our Creative Work”
+
+6. **Why Choose Us Section:**
+   - 4 points with icons:
+     ✔ Local Jalandhar Expertise  
+     ✔ Affordable & Transparent Pricing  
+     ✔ Multi-Platform (Snapchat + YouTube included)  
+     ✔ Free Website with Premium Plan  
+
+7. **Contact Section:**
+   - Contact Form (Name, Phone, Email, Message)
+   - WhatsApp button
+   - Call button
+
+### Design Style:
+- Clean, modern, mobile responsive
+- White background with gradient highlights (purple/blue)
+- Use card-based layout for packages and services
+- Professional Google fonts (Poppins / Inter / Montserrat)
+- Include smooth hover effects on buttons and cards
+
+### Important:
+
+- Use placeholders for images (can replace later).
+- Code should be well-structured and easy to edit.
