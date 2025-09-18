@@ -24,25 +24,43 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="#" 
-                className="w-8 h-8 bg-white/10 text-white rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                href="https://facebook.com/pixocraftofficial" 
+                className="w-10 h-10 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                 data-testid="footer-facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3), 0 2px 6px rgba(59, 130, 246, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.25)'
+                }}
               >
-                <SiFacebook className="h-4 w-4" />
+                <SiFacebook className="h-4 w-4 drop-shadow-sm relative z-10" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/15"></div>
               </a>
               <a 
-                href="#" 
-                className="w-8 h-8 bg-white/10 text-white rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                href="https://instagram.com/pixocraftofficial" 
+                className="w-10 h-10 bg-gradient-to-br from-pink-500 via-purple-600 to-pink-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                 data-testid="footer-instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  boxShadow: '0 4px 12px rgba(236, 72, 153, 0.3), 0 2px 6px rgba(236, 72, 153, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.25)'
+                }}
               >
-                <SiInstagram className="h-4 w-4" />
+                <SiInstagram className="h-4 w-4 drop-shadow-sm relative z-10" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/15"></div>
               </a>
               <a 
-                href="#" 
-                className="w-8 h-8 bg-white/10 text-white rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                href="https://youtube.com/@pixocraftofficial" 
+                className="w-10 h-10 bg-gradient-to-br from-red-500 via-red-600 to-red-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                 data-testid="footer-youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  boxShadow: '0 4px 12px rgba(239, 68, 68, 0.3), 0 2px 6px rgba(239, 68, 68, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.25)'
+                }}
               >
-                <SiYoutube className="h-4 w-4" />
+                <SiYoutube className="h-4 w-4 drop-shadow-sm relative z-10" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/15"></div>
               </a>
             </div>
           </div>

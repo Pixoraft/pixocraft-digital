@@ -237,51 +237,71 @@ export default function ContactSection() {
             {/* Premium Social Media Links */}
             <div className="glass-card p-6 rounded-2xl">
               <h4 className="font-semibold mb-4 text-center">Follow Us</h4>
-              <div className="flex justify-center space-x-4">
+              <div className="flex justify-center space-x-6">
                 <a 
                   href="https://facebook.com/pixocraftofficial" 
-                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+                  className="social-icon-3d w-14 h-14 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-500 hover:scale-125 hover:-translate-y-2"
                   data-testid="social-facebook"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{
+                    boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3), 0 6px 12px rgba(59, 130, 246, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.25)'
+                  }}
                 >
-                  <SiFacebook className="h-6 w-6" />
+                  <SiFacebook className="h-6 w-6 drop-shadow-sm relative z-10" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/20"></div>
                 </a>
                 <a 
                   href="https://instagram.com/pixocraftofficial" 
-                  className="w-12 h-12 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-pink-500/50"
+                  className="social-icon-3d w-14 h-14 bg-gradient-to-br from-pink-500 via-purple-600 to-pink-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-500 hover:scale-125 hover:-translate-y-2"
                   data-testid="social-instagram"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{
+                    boxShadow: '0 10px 25px rgba(236, 72, 153, 0.3), 0 6px 12px rgba(236, 72, 153, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.25)'
+                  }}
                 >
-                  <SiInstagram className="h-6 w-6" />
+                  <SiInstagram className="h-6 w-6 drop-shadow-sm relative z-10" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/20"></div>
                 </a>
                 <a 
                   href="https://snapchat.com/add/pixocraftofficial" 
-                  className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-yellow-500/50"
+                  className="social-icon-3d w-14 h-14 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 text-black rounded-full flex items-center justify-center relative transform-gpu transition-all duration-500 hover:scale-125 hover:-translate-y-2"
                   data-testid="social-snapchat"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{
+                    boxShadow: '0 10px 25px rgba(251, 191, 36, 0.3), 0 6px 12px rgba(251, 191, 36, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.25)'
+                  }}
                 >
-                  <SiSnapchat className="h-6 w-6" />
+                  <SiSnapchat className="h-6 w-6 drop-shadow-sm relative z-10" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/20"></div>
                 </a>
                 <a 
                   href="https://youtube.com/@pixocraftofficial" 
-                  className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-red-500/50"
+                  className="social-icon-3d w-14 h-14 bg-gradient-to-br from-red-500 via-red-600 to-red-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-500 hover:scale-125 hover:-translate-y-2"
                   data-testid="social-youtube"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{
+                    boxShadow: '0 10px 25px rgba(239, 68, 68, 0.3), 0 6px 12px rgba(239, 68, 68, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.25)'
+                  }}
                 >
-                  <SiYoutube className="h-6 w-6" />
+                  <SiYoutube className="h-6 w-6 drop-shadow-sm relative z-10" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/20"></div>
                 </a>
                 <a 
                   href="https://linkedin.com/company/pixocraftofficial" 
-                  className="w-12 h-12 bg-gradient-to-r from-blue-800 to-blue-900 text-white rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-blue-800/50"
+                  className="social-icon-3d w-14 h-14 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-500 hover:scale-125 hover:-translate-y-2"
                   data-testid="social-linkedin"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{
+                    boxShadow: '0 10px 25px rgba(37, 99, 235, 0.3), 0 6px 12px rgba(37, 99, 235, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.25)'
+                  }}
                 >
-                  <SiLinkedin className="h-6 w-6" />
+                  <SiLinkedin className="h-6 w-6 drop-shadow-sm relative z-10" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/20"></div>
                 </a>
               </div>
             </div>

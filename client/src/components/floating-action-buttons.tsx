@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Mail, Plus, X } from "lucide-react";
+import { MessageCircle, Phone, Mail, MessageSquare, X } from "lucide-react";
 import { useState } from "react";
 
 export default function FloatingActionButtons() {
@@ -35,7 +35,7 @@ export default function FloatingActionButtons() {
           data-testid="floating-main"
           aria-label="Contact Options"
         >
-          {isExpanded ? <X className="h-6 w-6" /> : <Plus className="h-6 w-6" />}
+          {isExpanded ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
         </button>
 
         {/* Contact Options - shown when expanded */}
