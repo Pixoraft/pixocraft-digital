@@ -98,7 +98,8 @@ export default function PackagesSection() {
                 </div>
               )}
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold font-display mb-4">{pkg.name}</h3>
+                <h3 className="text-2xl font-bold font-display mb-2">{pkg.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4 italic">{pkg.subtitle}</p>
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-primary">{pkg.price}</span>
                   <span className="text-muted-foreground">{pkg.period}</span>

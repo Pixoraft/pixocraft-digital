@@ -62,14 +62,8 @@ function FloatingText() {
       floatIntensity={0.4}
       floatingRange={[0, 0.3]}
     >
-      <Text3D
-        ref={textRef}
-        font="/fonts/helvetiker_regular.typeface.json"
-        size={0.4}
-        height={0.1}
-        position={[-1, 1, -2]}
-      >
-        DIGITAL
+      <mesh ref={textRef} position={[-1, 1, -2]}>
+        <torusGeometry args={[0.5, 0.2, 16, 100]} />
         <MeshDistortMaterial
           color="#ff6b35"
           factor={0.5}
@@ -77,7 +71,7 @@ function FloatingText() {
           roughness={0.1}
           metalness={0.9}
         />
-      </Text3D>
+      </mesh>
     </Float>
   );
 }
