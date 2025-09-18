@@ -15,7 +15,7 @@ import {
   SiLinkedin,
   SiWhatsapp
 } from "react-icons/si";
-import ThreeDSocialIcons from "./three-d-social-icons";
+// Removed 3D social icons for better compatibility
 
 interface ContactFormData {
   name: string;
@@ -234,8 +234,57 @@ export default function ContactSection() {
               </Button>
             </div>
 
-            {/* 3D Social Media Links */}
-            <ThreeDSocialIcons />
+            {/* Premium Social Media Links */}
+            <div className="glass-card p-6 rounded-2xl">
+              <h4 className="font-semibold mb-4 text-center">Follow Us</h4>
+              <div className="flex justify-center space-x-4">
+                <a 
+                  href="https://facebook.com/pixocraftofficial" 
+                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+                  data-testid="social-facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiFacebook className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://instagram.com/pixocraftofficial" 
+                  className="w-12 h-12 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-pink-500/50"
+                  data-testid="social-instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiInstagram className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://snapchat.com/add/pixocraftofficial" 
+                  className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-yellow-500/50"
+                  data-testid="social-snapchat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiSnapchat className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://youtube.com/@pixocraftofficial" 
+                  className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-red-500/50"
+                  data-testid="social-youtube"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiYoutube className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://linkedin.com/company/pixocraftofficial" 
+                  className="w-12 h-12 bg-gradient-to-r from-blue-800 to-blue-900 text-white rounded-full flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-blue-800/50"
+                  data-testid="social-linkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiLinkedin className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { Phone, Package } from "lucide-react";
-import ThreeDHeroElements from "./three-d-hero-elements";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -15,8 +14,11 @@ export default function HeroSection() {
       className="hero-gradient animate-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
       data-testid="hero-section"
     >
-      {/* 3D Background Elements */}
-      <ThreeDHeroElements />
+      {/* Premium CSS-Only Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 via-blue-600/20 to-pink-600/30 animate-gradient"></div>
+      <div className="absolute inset-0" style={{
+        background: 'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%)'
+      }}></div>
       
       {/* Enhanced Floating Elements */}
       <div className="absolute top-20 left-10 floating-element">
