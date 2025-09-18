@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
 import ServicesSection from "@/components/services-section";
+import WebDevSection from "@/components/web-dev-section";
 import PackagesSection from "@/components/packages-section";
 import PortfolioSection from "@/components/portfolio-section";
 import WhyChooseUsSection from "@/components/why-choose-us-section";
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <WebDevSection />
       <PackagesSection />
       <PortfolioSection />
       <WhyChooseUsSection />

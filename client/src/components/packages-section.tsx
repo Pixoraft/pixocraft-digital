@@ -10,49 +10,63 @@ export default function PackagesSection() {
 
   const packages = [
     {
-      name: "Starter",
+      name: "Starter Plan",
       price: "₹4,999",
       period: "/month",
+      subtitle: "Perfect for local shops & startups starting their digital presence",
       features: [
-        "FB + Insta (8 posts + 2 reels)",
-        "Basic Snapchat story posting",
-        "Monthly growth report",
-        "Email support"
+        "Facebook + Instagram Handling",
+        "8 Creative Posts + 4 Engaging Reels per month",
+        "Captions + Trending Hashtags",
+        "Stories on FB, Instagram & Snapchat (3–4 per week)",
+        "Basic Meta Ads (FB + Insta) + Snapchat Ads",
+        "Monthly Growth Report",
+        "Result-based ad pricing - Only pay extra if ads perform well"
       ],
-      buttonText: "Get Started",
-      buttonClass: "w-full bg-primary text-primary-foreground font-semibold py-3 rounded-full hover:bg-primary/90 transition-all duration-300",
-      isPopular: false
+      buttonText: "Start Growing",
+      buttonClass: "w-full bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition-all duration-300",
+      isPopular: false,
+      color: "green"
     },
     {
-      name: "Growth",
+      name: "Growth Plan",
       price: "₹9,999",
       period: "/month",
+      subtitle: "For small & medium businesses ready to grow their brand",
       features: [
-        "FB + Insta (15 posts + 4 reels)",
-        "Snapchat ads (basic)",
-        "YouTube 2 videos (upload + SEO)",
-        "Bi-weekly reports",
-        "Phone support"
+        "FB + Insta Handling",
+        "15 High-Quality Posts + 8 Reels",
+        "Graphics + Stories (custom designed)",
+        "Meta Ads (FB + Insta) + Snapchat Ads with basic targeting",
+        "YouTube Handling → 4 Videos uploaded + SEO",
+        "Daily Stories on FB, Instagram & Snapchat",
+        "Bi-weekly Growth Report + Strategy Call",
+        "Multi-platform daily stories for real engagement"
       ],
-      buttonText: "Get Started",
-      buttonClass: "w-full bg-accent text-accent-foreground font-semibold py-3 rounded-full hover:bg-accent/90 transition-all duration-300",
-      isPopular: false
+      buttonText: "Accelerate Growth",
+      buttonClass: "w-full bg-blue-500 text-white font-semibold py-3 rounded-full hover:bg-blue-600 transition-all duration-300",
+      isPopular: false,
+      color: "blue"
     },
     {
-      name: "Premium",
+      name: "Premium Plan",
       price: "₹19,999",
       period: "/month",
+      subtitle: "For brands wanting full-service professional marketing",
       features: [
-        "FB + Insta + Snapchat + YouTube handling",
-        "25+ posts + 8 reels + daily stories",
-        "Advanced Snapchat ads",
-        "YouTube 6 videos (SEO + thumbnails)",
-        "Weekly reports + engagement replies",
-        { text: "🎁 Free Business Website (₹10,000 value)", isGift: true }
+        "FB + Insta + Snapchat + YouTube Handling",
+        "25+ Posts + 12 Premium Reels + Daily Custom Stories",
+        "Advanced Meta Ads (FB + Insta) + Snapchat Ads targeting leads & sales",
+        "YouTube Handling → 7 Videos (upload, SEO, custom thumbnails)",
+        "Weekly Reports + Engagement Replies (DMs & comments management)",
+        { text: "🎁 Free Business Website worth ₹10,000", isGift: true },
+        "Maximum engagement & sales across all platforms",
+        "Full-service professional marketing experience"
       ],
-      buttonText: "Get Started",
-      buttonClass: "w-full bg-gradient-to-r from-primary to-accent text-white font-semibold py-3 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105",
-      isPopular: true
+      buttonText: "Go Premium",
+      buttonClass: "w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-semibold py-3 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105",
+      isPopular: true,
+      color: "premium"
     }
   ];
 

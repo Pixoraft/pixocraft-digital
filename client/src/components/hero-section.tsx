@@ -1,4 +1,5 @@
 import { Phone, Package } from "lucide-react";
+import ThreeDHeroElements from "./three-d-hero-elements";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -14,15 +15,18 @@ export default function HeroSection() {
       className="hero-gradient animate-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
       data-testid="hero-section"
     >
-      {/* Floating Elements */}
+      {/* 3D Background Elements */}
+      <ThreeDHeroElements />
+      
+      {/* Enhanced Floating Elements */}
       <div className="absolute top-20 left-10 floating-element">
-        <div className="w-16 h-16 bg-white/20 rounded-full blur-sm"></div>
+        <div className="w-16 h-16 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-sm animate-pulse"></div>
       </div>
       <div className="absolute top-40 right-20 floating-element" style={{animationDelay: '-2s'}}>
-        <div className="w-12 h-12 bg-white/15 rounded-full blur-sm"></div>
+        <div className="w-12 h-12 bg-gradient-to-r from-blue-400/25 to-cyan-400/25 rounded-full blur-sm animate-pulse"></div>
       </div>
       <div className="absolute bottom-20 left-20 floating-element" style={{animationDelay: '-4s'}}>
-        <div className="w-20 h-20 bg-white/10 rounded-full blur-sm"></div>
+        <div className="w-20 h-20 bg-gradient-to-r from-green-400/20 to-teal-400/20 rounded-full blur-sm animate-pulse"></div>
       </div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">

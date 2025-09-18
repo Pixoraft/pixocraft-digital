@@ -15,6 +15,7 @@ import {
   SiLinkedin,
   SiWhatsapp
 } from "react-icons/si";
+import ThreeDSocialIcons from "./three-d-social-icons";
 
 interface ContactFormData {
   name: string;
@@ -74,14 +75,14 @@ export default function ContactSection() {
 
   const openWhatsApp = () => {
     // Using a more reliable WhatsApp format
-    const phoneNumber = "919876543210";
+    const phoneNumber = "917009340397";
     const message = encodeURIComponent("Hi! I'm interested in your digital marketing services.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, "_blank");
   };
 
   const makeCall = () => {
-    window.open("tel:+919876543210", "_self");
+    window.open("tel:+917009340397", "_self");
   };
 
   return (
@@ -189,7 +190,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-muted-foreground">+91 7009340397</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -198,7 +199,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">hello@pixocraft.com</p>
+                    <p className="text-muted-foreground">pixocraftoffical@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -233,47 +234,8 @@ export default function ContactSection() {
               </Button>
             </div>
 
-            {/* Social Media Links */}
-            <div className="glass-card p-6 rounded-2xl">
-              <h4 className="font-semibold mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300"
-                  data-testid="social-facebook"
-                >
-                  <SiFacebook className="h-5 w-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300"
-                  data-testid="social-instagram"
-                >
-                  <SiInstagram className="h-5 w-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-yellow-400 text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300"
-                  data-testid="social-snapchat"
-                >
-                  <SiSnapchat className="h-5 w-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300"
-                  data-testid="social-youtube"
-                >
-                  <SiYoutube className="h-5 w-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300"
-                  data-testid="social-linkedin"
-                >
-                  <SiLinkedin className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
+            {/* 3D Social Media Links */}
+            <ThreeDSocialIcons />
           </div>
         </div>
       </div>

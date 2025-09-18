@@ -3,14 +3,14 @@ import { MessageCircle, Phone } from "lucide-react";
 export default function FloatingActionButtons() {
   const openWhatsApp = () => {
     // Using a more reliable WhatsApp format
-    const phoneNumber = "919876543210";
+    const phoneNumber = "917009340397";
     const message = encodeURIComponent("Hi! I'm interested in your digital marketing services.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, "_blank");
   };
 
   const makeCall = () => {
-    window.open("tel:+919876543210", "_self");
+    window.open("tel:+917009340397", "_self");
   };
 
   return (
