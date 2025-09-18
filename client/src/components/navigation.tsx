@@ -13,7 +13,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass-card" data-testid="navigation">
+    <nav className="fixed top-0 w-full z-50 nav-glass" data-testid="navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -52,13 +52,6 @@ export default function Navigation() {
                 data-testid="nav-packages"
               >
                 Packages
-              </button>
-              <button 
-                onClick={() => scrollToSection('portfolio')}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-                data-testid="nav-portfolio"
-              >
-                Portfolio
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
@@ -114,13 +107,6 @@ export default function Navigation() {
                 data-testid="mobile-nav-packages"
               >
                 Packages
-              </button>
-              <button 
-                onClick={() => scrollToSection('portfolio')}
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-200 font-medium w-full text-left"
-                data-testid="mobile-nav-portfolio"
-              >
-                Portfolio
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
