@@ -24,7 +24,7 @@ export default function PackagesSection() {
         "Result-based ad pricing - Only pay extra if ads perform well"
       ],
       buttonText: "Start Growing",
-      buttonClass: "w-full bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition-all duration-300",
+      buttonClass: "w-full bg-green-500 text-white font-semibold py-3 sm:py-3 px-4 sm:px-6 rounded-full hover:bg-green-600 transition-all duration-300 text-sm sm:text-base",
       isPopular: false,
       color: "green"
     },
@@ -44,7 +44,7 @@ export default function PackagesSection() {
         "Multi-platform daily stories for real engagement"
       ],
       buttonText: "Accelerate Growth",
-      buttonClass: "w-full bg-blue-500 text-white font-semibold py-3 rounded-full hover:bg-blue-600 transition-all duration-300",
+      buttonClass: "w-full bg-blue-500 text-white font-semibold py-3 sm:py-3 px-4 sm:px-6 rounded-full hover:bg-blue-600 transition-all duration-300 text-sm sm:text-base",
       isPopular: false,
       color: "blue"
     },
@@ -64,7 +64,7 @@ export default function PackagesSection() {
         "Full-service professional marketing experience"
       ],
       buttonText: "Go Premium",
-      buttonClass: "w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-semibold py-3 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105",
+      buttonClass: "w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-semibold py-3 sm:py-3 px-4 sm:px-6 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base",
       isPopular: true,
       color: "premium"
     }
@@ -73,21 +73,21 @@ export default function PackagesSection() {
   return (
     <section id="packages" className="py-20 bg-background" data-testid="packages-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display gradient-text mb-4 sm:mb-6 px-4">
             Choose Your Plan
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6 sm:mb-8"></div>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Affordable packages designed to grow your business on social media
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-sm md:max-w-none mx-auto">
           {packages.map((pkg, index) => (
             <div 
               key={index}
-              className={`glass-card p-8 rounded-2xl pricing-card transition-all duration-500 relative ${
+              className={`glass-card p-6 sm:p-8 rounded-2xl pricing-card transition-all duration-500 relative ${
                 pkg.isPopular ? 'border-2 border-primary' : ''
               }`}
               data-testid={`package-card-${pkg.name.toLowerCase()}`}
@@ -97,26 +97,26 @@ export default function PackagesSection() {
                   Most Popular
                 </div>
               )}
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold font-display mb-2">{pkg.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4 italic">{pkg.subtitle}</p>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-primary">{pkg.price}</span>
-                  <span className="text-muted-foreground">{pkg.period}</span>
+              <div className="text-center mb-6 sm:mb-8">
+                <h3 className="text-xl sm:text-2xl font-bold font-display mb-2">{pkg.name}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 italic leading-relaxed px-2">{pkg.subtitle}</p>
+                <div className="mb-4 sm:mb-6">
+                  <span className="text-3xl sm:text-4xl font-bold text-primary">{pkg.price}</span>
+                  <span className="text-sm sm:text-base text-muted-foreground">{pkg.period}</span>
                 </div>
               </div>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 {pkg.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center">
+                  <li key={featureIndex} className="flex items-start">
                     {typeof feature === 'object' && feature.isGift ? (
                       <>
-                        <Gift className="text-yellow-500 mr-3 h-5 w-5" />
-                        <span className="font-semibold text-primary">{feature.text}</span>
+                        <Gift className="text-yellow-500 mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 mt-0.5 flex-shrink-0" />
+                        <span className="font-semibold text-primary text-sm sm:text-base leading-relaxed">{feature.text}</span>
                       </>
                     ) : (
                       <>
-                        <Check className="text-green-500 mr-3 h-5 w-5" />
-                        <span>{typeof feature === 'string' ? feature : feature.text}</span>
+                        <Check className="text-green-500 mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm sm:text-base leading-relaxed">{typeof feature === 'string' ? feature : feature.text}</span>
                       </>
                     )}
                   </li>

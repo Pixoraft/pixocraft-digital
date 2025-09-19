@@ -7,7 +7,10 @@ export default function FloatingActionButtons() {
   const [showWhatsAppForm, setShowWhatsAppForm] = useState(false);
 
   const openWhatsApp = () => {
-    setShowWhatsAppForm(true);
+    const phoneNumber = "917009340397";
+    const message = encodeURIComponent("Hi! I'm interested in your digital marketing services.");
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
     setIsExpanded(false);
   };
 
@@ -27,15 +30,15 @@ export default function FloatingActionButtons() {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 flex flex-col-reverse space-y-reverse space-y-4 z-50" data-testid="floating-buttons">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex flex-col-reverse space-y-reverse space-y-3 sm:space-y-4 z-50" data-testid="floating-buttons">
         {/* Main Contact Button */}
         <button 
           onClick={toggleExpanded}
-          className="w-14 h-14 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+          className="w-12 h-12 sm:w-14 sm:h-14 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
           data-testid="floating-main"
           aria-label="Contact Options"
         >
-          {isExpanded ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
+          {isExpanded ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6" />}
         </button>
 
         {/* Contact Options - shown when expanded */}
@@ -43,27 +46,27 @@ export default function FloatingActionButtons() {
           <>
             <button 
               onClick={openEmail}
-              className="w-12 h-12 bg-red-500 hover:bg-red-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 hover:bg-red-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
               data-testid="floating-email"
               aria-label="Contact via Email"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
             <button 
               onClick={openWhatsApp}
-              className="w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
               data-testid="floating-whatsapp"
               aria-label="Contact via WhatsApp"
             >
-              <MessageCircle className="h-5 w-5" />
+              <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
             <button 
               onClick={makeCall}
-              className="w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
               data-testid="floating-call"
               aria-label="Make a phone call"
             >
-              <Phone className="h-5 w-5" />
+              <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
           </>
         )}
@@ -71,8 +74,8 @@ export default function FloatingActionButtons() {
 
       {/* Email Form Popup */}
       {showEmailForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" data-testid="email-form-popup">
-          <div className="bg-background border border-border rounded-lg p-6 w-full max-w-md">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4" data-testid="email-form-popup" role="dialog" aria-modal="true">
+          <div className="bg-background border border-border rounded-lg p-4 sm:p-6 w-full max-w-sm sm:max-w-md">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">Send Email</h2>
               <button 
@@ -145,10 +148,10 @@ export default function FloatingActionButtons() {
 
       {/* WhatsApp Form Popup */}
       {showWhatsAppForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" data-testid="whatsapp-form-popup">
-          <div className="bg-background border border-border rounded-lg p-6 w-full max-w-md">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">Send WhatsApp Message</h2>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4" data-testid="whatsapp-form-popup" role="dialog" aria-modal="true">
+          <div className="bg-background border border-border rounded-lg p-4 sm:p-6 w-full max-w-sm sm:max-w-md">
+            <div className="flex justify-between items-center mb-3 sm:mb-4">
+              <h2 className="text-lg sm:text-xl font-semibold">Send WhatsApp Message</h2>
               <button 
                 onClick={() => setShowWhatsAppForm(false)}
                 className="text-muted-foreground hover:text-foreground"
@@ -157,7 +160,7 @@ export default function FloatingActionButtons() {
                 <X className="h-5 w-5" />
               </button>
             </div>
-            <form className="space-y-4" onSubmit={(e) => {
+            <form className="space-y-3 sm:space-y-4" onSubmit={(e) => {
               e.preventDefault();
               const formData = new FormData(e.target as HTMLFormElement);
               const name = formData.get('whatsapp-name') as string;
@@ -179,7 +182,7 @@ export default function FloatingActionButtons() {
                   type="text"
                   id="whatsapp-name"
                   name="whatsapp-name"
-                  className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                  className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-input rounded-md bg-background"
                   data-testid="input-whatsapp-name"
                 />
               </div>
@@ -188,16 +191,16 @@ export default function FloatingActionButtons() {
                 <textarea
                   id="whatsapp-message"
                   name="whatsapp-message"
-                  rows={4}
+                  rows={3}
                   required
-                  className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                  className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-input rounded-md bg-background resize-none"
                   placeholder="Hi! I'm interested in your digital marketing services."
                   data-testid="input-whatsapp-message"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition-colors"
+                className="w-full bg-green-500 text-white py-2 sm:py-2.5 rounded-md hover:bg-green-600 transition-colors text-sm sm:text-base"
                 data-testid="button-send-whatsapp"
               >
                 Send WhatsApp Message
