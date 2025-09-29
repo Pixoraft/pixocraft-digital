@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "wouter";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [location] = useLocation();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const closeMenu = () => {
     setIsMenuOpen(false);
   };
 
@@ -25,41 +23,46 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                data-testid="nav-home"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-                data-testid="nav-about"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-                data-testid="nav-services"
-              >
-                Services
-              </button>
-              <button 
-                onClick={() => scrollToSection('packages')}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-                data-testid="nav-packages"
-              >
-                Packages
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-                data-testid="nav-contact"
-              >
-                Contact
-              </button>
+              <Link href="/">
+                <span 
+                  className={`transition-colors duration-200 font-medium ${
+                    location === '/' ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="nav-home"
+                >
+                  Home
+                </span>
+              </Link>
+              <Link href="/about">
+                <span 
+                  className={`transition-colors duration-200 font-medium ${
+                    location === '/about' ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="nav-about"
+                >
+                  About
+                </span>
+              </Link>
+              <Link href="/pricing">
+                <span 
+                  className={`transition-colors duration-200 font-medium ${
+                    location === '/pricing' ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="nav-pricing"
+                >
+                  Pricing
+                </span>
+              </Link>
+              <Link href="/contact">
+                <span 
+                  className={`transition-colors duration-200 font-medium ${
+                    location === '/contact' ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="nav-contact"
+                >
+                  Contact
+                </span>
+              </Link>
             </div>
           </div>
           
@@ -80,41 +83,46 @@ export default function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden" data-testid="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md rounded-lg mt-2">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-200 font-medium w-full text-left"
-                data-testid="mobile-nav-home"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-200 font-medium w-full text-left"
-                data-testid="mobile-nav-about"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-200 font-medium w-full text-left"
-                data-testid="mobile-nav-services"
-              >
-                Services
-              </button>
-              <button 
-                onClick={() => scrollToSection('packages')}
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-200 font-medium w-full text-left"
-                data-testid="mobile-nav-packages"
-              >
-                Packages
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-200 font-medium w-full text-left"
-                data-testid="mobile-nav-contact"
-              >
-                Contact
-              </button>
+              <Link href="/" onClick={closeMenu}>
+                <span 
+                  className={`block px-3 py-2 transition-colors duration-200 font-medium w-full text-left ${
+                    location === '/' ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="mobile-nav-home"
+                >
+                  Home
+                </span>
+              </Link>
+              <Link href="/about" onClick={closeMenu}>
+                <span 
+                  className={`block px-3 py-2 transition-colors duration-200 font-medium w-full text-left ${
+                    location === '/about' ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="mobile-nav-about"
+                >
+                  About
+                </span>
+              </Link>
+              <Link href="/pricing" onClick={closeMenu}>
+                <span 
+                  className={`block px-3 py-2 transition-colors duration-200 font-medium w-full text-left ${
+                    location === '/pricing' ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="mobile-nav-pricing"
+                >
+                  Pricing
+                </span>
+              </Link>
+              <Link href="/contact" onClick={closeMenu}>
+                <span 
+                  className={`block px-3 py-2 transition-colors duration-200 font-medium w-full text-left ${
+                    location === '/contact' ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="mobile-nav-contact"
+                >
+                  Contact
+                </span>
+              </Link>
             </div>
           </div>
         )}
