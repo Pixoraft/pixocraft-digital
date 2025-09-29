@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import PackagesSection from "@/components/packages-section";
 import { Smartphone, Palette, TrendingUp } from "lucide-react";
 import { useLocation } from "wouter";
 
@@ -119,6 +120,9 @@ export default function Pricing() {
           </p>
         </div>
       </section>
+
+      {/* Main Packages Section */}
+      <PackagesSection />
 
       {/* Social Media Management Section */}
       <section className="py-20 bg-background" data-testid="social-media-pricing">

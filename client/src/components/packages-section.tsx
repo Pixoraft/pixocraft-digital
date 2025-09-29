@@ -1,10 +1,16 @@
 import { Check, Gift } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function PackagesSection() {
+  const [, setLocation] = useLocation();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // If contact section doesn't exist on current page, navigate to contact page
+      setLocation('/contact');
     }
   };
 
@@ -87,7 +93,7 @@ export default function PackagesSection() {
           {packages.map((pkg, index) => (
             <div 
               key={index}
-              className={`glass-card p-6 sm:p-8 rounded-2xl pricing-card transition-all duration-500 relative ${
+              className={`glass-card p-6 sm:p-8 rounded-2xl pricing-card transition-all duration-500 relative flex flex-col ${
                 pkg.isPopular ? 'border-2 border-primary' : ''
               }`}
               data-testid={`package-card-${pkg.name.toLowerCase()}`}
@@ -105,7 +111,7 @@ export default function PackagesSection() {
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-2 italic leading-relaxed px-2">{pkg.subtitle}</p>
               </div>
-              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-1">
                 {pkg.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
                     {typeof feature === 'object' && feature.isGift ? (
