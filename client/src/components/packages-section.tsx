@@ -98,12 +98,12 @@ export default function PackagesSection() {
                 </div>
               )}
               <div className="text-center mb-6 sm:mb-8">
-                <h3 className="text-xl sm:text-2xl font-bold font-display mb-2">{pkg.name}</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 italic leading-relaxed px-2">{pkg.subtitle}</p>
+                <h3 className="text-xl sm:text-2xl font-bold font-display mb-3">{pkg.name}</h3>
                 <div className="mb-4 sm:mb-6">
-                  <span className="text-3xl sm:text-4xl font-bold text-primary">{pkg.price}</span>
-                  <span className="text-sm sm:text-base text-muted-foreground">{pkg.period}</span>
+                  <span className="text-4xl sm:text-5xl font-bold text-primary">{pkg.price}</span>
+                  <span className="text-base sm:text-lg text-muted-foreground">{pkg.period}</span>
                 </div>
+                <p className="text-xs sm:text-sm text-muted-foreground mb-2 italic leading-relaxed px-2">{pkg.subtitle}</p>
               </div>
               <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 {pkg.features.map((feature, featureIndex) => (
