@@ -166,7 +166,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-white/20 pt-6 sm:pt-8 text-center text-white/80">
           <p className="text-xs sm:text-sm leading-relaxed px-2">
-            &copy; 2024 Pixocraft Digital. All rights reserved. 
+            &copy; 2025 <a href="https://pixocraft.in" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Pixocraft</a>. All rights reserved. 
             <span className="block sm:inline sm:ml-1">Designed with ❤️ for local businesses in Jalandhar</span>
           </p>
         </div>
