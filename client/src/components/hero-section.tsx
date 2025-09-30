@@ -1,4 +1,5 @@
 import { Phone, Package } from "lucide-react";
+import FluidGlassHero from "./fluid-glass-hero";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -19,6 +20,9 @@ export default function HeroSection() {
       <div className="absolute inset-0" style={{
         background: 'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%)'
       }}></div>
+
+      {/* Fluid Glass 3D Effect */}
+      <FluidGlassHero text="Pixocraft Digital" colorHex="#667eea" />
       
       {/* Enhanced Floating Elements - Mobile Optimized */}
       <div className="absolute top-16 sm:top-20 left-4 sm:left-10 floating-element pointer-events-none">
