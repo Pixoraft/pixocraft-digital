@@ -12,14 +12,14 @@ export default function HeroSection() {
   return (
     <section 
       id="home" 
-      className="hero-gradient animate-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
       data-testid="hero-section"
     >
-      {/* Premium CSS-Only Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 via-blue-600/20 to-pink-600/30 animate-gradient"></div>
-      <div className="absolute inset-0" style={{
-        background: 'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%)'
-      }}></div>
+      {/* CSS Iridescence Background Effect */}
+      <div className="absolute inset-0 iridescence-bg"></div>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-pink-600/10"></div>
 
       {/* Fluid Glass 3D Effect */}
       <FluidGlassHero text="Pixocraft Digital" colorHex="#667eea" />

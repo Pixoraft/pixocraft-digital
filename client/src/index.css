@@ -265,6 +265,42 @@
   to { transform: rotate(360deg); }
 }
 
+/* Iridescence Background Effect */
+.iridescence-bg {
+  background: linear-gradient(
+    125deg,
+    #667eea 0%,
+    #764ba2 15%,
+    #f093fb 30%,
+    #4facfe 45%,
+    #00f2fe 60%,
+    #667eea 75%,
+    #764ba2 90%,
+    #f093fb 100%
+  );
+  background-size: 400% 400%;
+  animation: iridescence 15s ease infinite;
+  opacity: 0.6;
+}
+
+@keyframes iridescence {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Enhanced Scrollbar Styling to Match Website Theme */
 ::-webkit-scrollbar {
   width: 10px;
