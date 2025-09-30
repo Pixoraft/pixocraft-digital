@@ -1,10 +1,3 @@
-/* eslint-disable react/no-unknown-property */
-import * as THREE from 'three';
-import { useRef, useState, useEffect } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useFBO, MeshTransmissionMaterial } from '@react-three/drei';
-import { easing } from 'maath';
-
 interface FluidGlassHeroProps {
   text?: string;
   colorHex?: string;
@@ -12,105 +5,59 @@ interface FluidGlassHeroProps {
 
 export default function FluidGlassHero({ text = 'Pixocraft', colorHex = '#667eea' }: FluidGlassHeroProps) {
   return (
-    <div className="absolute inset-0 w-full h-full pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 20], fov: 15 }} gl={{ alpha: true, antialias: true }}>
-        <GlassEffect colorHex={colorHex} text={text} />
-      </Canvas>
+    <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center">
+        {/* Animated glass-like shapes using CSS */}
+        <div className="relative w-full h-full flex items-center justify-center">
+          {/* Main rotating shape */}
+          <div 
+            className="absolute w-48 h-48 md:w-96 md:h-96 rounded-full opacity-20 animate-spin-slow"
+            style={{
+              background: `radial-gradient(circle, ${colorHex}80, transparent 70%)`,
+              filter: 'blur(40px)',
+              animationDuration: '20s'
+            }}
+          />
+          
+          {/* Secondary pulsing shape */}
+          <div 
+            className="absolute w-64 h-64 md:w-[500px] md:h-[500px] rounded-full opacity-15 animate-pulse"
+            style={{
+              background: `radial-gradient(circle, ${colorHex}60, transparent 60%)`,
+              filter: 'blur(60px)',
+              animationDuration: '4s'
+            }}
+          />
+          
+          {/* Floating orbs */}
+          <div 
+            className="absolute top-1/4 left-1/4 w-32 h-32 md:w-48 md:h-48 rounded-full opacity-30 animate-float"
+            style={{
+              background: 'radial-gradient(circle, #667eea80, transparent 70%)',
+              filter: 'blur(30px)',
+              animationDelay: '0s'
+            }}
+          />
+          <div 
+            className="absolute bottom-1/3 right-1/4 w-40 h-40 md:w-56 md:h-56 rounded-full opacity-25 animate-float"
+            style={{
+              background: 'radial-gradient(circle, #f093fb60, transparent 70%)',
+              filter: 'blur(35px)',
+              animationDelay: '2s',
+              animationDuration: '8s'
+            }}
+          />
+          <div 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-36 md:h-36 rounded-full opacity-30 animate-float"
+            style={{
+              background: 'radial-gradient(circle, #4facfe70, transparent 70%)',
+              filter: 'blur(25px)',
+              animationDelay: '1s',
+              animationDuration: '6s'
+            }}
+          />
+        </div>
+      </div>
     </div>
-  );
-}
-
-function GlassEffect({ colorHex, text }: { colorHex: string; text: string }) {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const buffer = useFBO();
-  const { viewport, pointer, camera, gl } = useThree();
-  const [scene] = useState(() => new THREE.Scene());
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  useFrame((state, delta) => {
-    if (!meshRef.current) return;
-
-    const v = viewport.getCurrentViewport(camera, [0, 0, 15]);
-    
-    // Smooth pointer following - reduced on mobile
-    const dampFactor = isMobile ? 0.05 : 0.15;
-    const movementScale = isMobile ? 0.3 : 0.5;
-    const destX = pointer.x * v.width * movementScale;
-    const destY = pointer.y * v.height * movementScale;
-    
-    easing.damp3(meshRef.current.position, [destX, destY, 15], dampFactor, delta);
-    
-    // Gentle rotation
-    meshRef.current.rotation.x += delta * 0.1;
-    meshRef.current.rotation.y += delta * 0.15;
-
-    // Render scene to buffer
-    gl.setRenderTarget(buffer);
-    gl.render(scene, camera);
-    gl.setRenderTarget(null);
-
-    // Set background color
-    gl.setClearColor(colorHex, 0);
-  });
-
-  // Responsive scale
-  const scale = isMobile ? 0.08 : 0.12;
-
-  return (
-    <>
-      {/* Background plane with buffer texture */}
-      <mesh scale={[viewport.width, viewport.height, 1]}>
-        <planeGeometry />
-        <meshBasicMaterial map={buffer.texture} transparent opacity={0.8} />
-      </mesh>
-
-      {/* Glass sphere */}
-      <mesh ref={meshRef} scale={scale}>
-        <torusKnotGeometry args={[10, 3, 128, 16]} />
-        <MeshTransmissionMaterial
-          buffer={buffer.texture}
-          ior={1.2}
-          thickness={3}
-          anisotropy={0.05}
-          chromaticAberration={0.15}
-          transmission={1}
-          roughness={0}
-          metalness={0}
-          color={colorHex}
-          distortion={0.5}
-          distortionScale={0.5}
-          temporalDistortion={0.1}
-        />
-      </mesh>
-
-      {/* Gradient orbs in background */}
-      <GradientOrbs />
-    </>
-  );
-}
-
-function GradientOrbs() {
-  return (
-    <>
-      <mesh position={[-3, 2, 10]}>
-        <sphereGeometry args={[1.5, 32, 32]} />
-        <meshBasicMaterial color="#667eea" transparent opacity={0.3} />
-      </mesh>
-      <mesh position={[3, -2, 8]}>
-        <sphereGeometry args={[2, 32, 32]} />
-        <meshBasicMaterial color="#f093fb" transparent opacity={0.25} />
-      </mesh>
-      <mesh position={[0, 0, 6]}>
-        <sphereGeometry args={[1, 32, 32]} />
-        <meshBasicMaterial color="#4facfe" transparent opacity={0.3} />
-      </mesh>
-    </>
   );
 }
