@@ -130,7 +130,7 @@ export default function BlogDetail() {
             src={blog.image} 
             alt={`${blog.title} - ${blog.category} article by Pixocraft Digital`}
             className="w-full h-full object-cover"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
         </div>
