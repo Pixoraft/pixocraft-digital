@@ -42,4 +42,26 @@
   <priority>0.7</priority>
 </url>
 
+<!-- Individual Blog Posts -->
+<url>
+  <loc>https://pixocraft.in/blog/social-media-marketing-tips-jalandhar</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://pixocraft.in/blog/professional-video-editing-2025</loc>
+  <lastmod>2025-01-10</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://pixocraft.in/blog/digital-marketing-trends-punjab-2025</loc>
+  <lastmod>2025-01-05</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
 </urlset>
