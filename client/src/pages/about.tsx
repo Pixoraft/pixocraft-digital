@@ -108,8 +108,9 @@ export default function About() {
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Creative team working on digital marketing" 
+                alt="Digital marketing experts at Pixocraft Digital agency in Jalandhar Punjab" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
+                loading="lazy"
                 data-testid="about-image"
               />
               <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl">

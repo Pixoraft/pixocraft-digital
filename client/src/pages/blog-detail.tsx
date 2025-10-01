@@ -128,8 +128,9 @@ export default function BlogDetail() {
         <div className="relative h-64 sm:h-96 lg:h-[500px] mb-12">
           <img 
             src={blog.image} 
-            alt={blog.title}
+            alt={`${blog.title} - ${blog.category} article by Pixocraft Digital`}
             className="w-full h-full object-cover"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
         </div>
@@ -246,9 +247,10 @@ export default function BlogDetail() {
                       <div className="relative h-40 overflow-hidden">
                         <img 
                           src={relatedBlog.image} 
-                          alt={relatedBlog.title}
+                          alt={`${relatedBlog.title} - ${relatedBlog.category} article by Pixocraft Digital`}
                           className="w-full h-full object-cover"
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                       <div className="p-4">

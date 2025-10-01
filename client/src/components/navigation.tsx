@@ -21,8 +21,10 @@ export default function Navigation() {
                 <div className="w-10 h-10 rounded-full bg-white p-1 flex items-center justify-center">
                   <img 
                     src={navLogo} 
-                    alt="Pixocraft Digital" 
+                    alt="Pixocraft Digital - Digital Marketing Agency Jalandhar Logo" 
                     className="w-full h-full object-contain"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <h1 className="text-2xl font-bold font-display gradient-text">

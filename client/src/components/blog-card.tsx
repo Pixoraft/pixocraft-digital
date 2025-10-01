@@ -32,9 +32,10 @@ export default function BlogCard({
         <div className="relative h-48 sm:h-56 overflow-hidden">
           <img 
             src={image} 
-            alt={title}
+            alt={`${title} - ${category} article by Pixocraft Digital`}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
+            decoding="async"
           />
           <div className="absolute top-4 right-4">
             <span className="px-3 py-1 rounded-full bg-primary text-white text-xs sm:text-sm font-semibold">

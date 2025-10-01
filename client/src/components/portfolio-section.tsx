@@ -60,8 +60,9 @@ export default function PortfolioSection() {
               >
               <img 
                 src={item.image} 
-                alt={item.title} 
+                alt={`${item.title} - ${item.category} project by Pixocraft Digital`}
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 text-white">
