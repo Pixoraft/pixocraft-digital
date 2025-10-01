@@ -66,11 +66,13 @@ export default function Iridescence({
     const ctn = ctnDom.current;
     
     let renderer: Renderer | null = null;
-    let program: Program;
+    let program: Program | null = null;
+    let gl: any = null;
+    let canvas: HTMLCanvasElement | null = null;
     
     try {
       renderer = new Renderer();
-      const gl = renderer.gl;
+      gl = renderer.gl;
       if (!gl) {
         console.warn('WebGL not supported, Iridescence effect disabled');
         return;
@@ -80,8 +82,6 @@ export default function Iridescence({
       console.warn('Failed to initialize WebGL renderer:', error);
       return;
     }
-    
-    const gl = renderer.gl;
 
     function resize() {
       if (!renderer) return;
@@ -118,7 +118,7 @@ export default function Iridescence({
     let animateId: number;
 
     function update(t: number) {
-      if (!renderer) return;
+      if (!renderer || !program) return;
       animateId = requestAnimationFrame(update);
       program.uniforms.uTime.value = t * 0.001;
       renderer.render({ scene: mesh });
@@ -127,6 +127,7 @@ export default function Iridescence({
     ctn.appendChild(gl.canvas);
 
     function handleMouseMove(e: MouseEvent) {
+      if (!program) return;
       const rect = ctn.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = 1.0 - (e.clientY - rect.top) / rect.height;
@@ -144,8 +145,10 @@ export default function Iridescence({
       if (mouseReact) {
         ctn.removeEventListener('mousemove', handleMouseMove);
       }
-      ctn.removeChild(gl.canvas);
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      if (gl && gl.canvas && ctn.contains(gl.canvas)) {
+        ctn.removeChild(gl.canvas);
+        gl.getExtension('WEBGL_lose_context')?.loseContext();
+      }
     };
   }, [color, speed, amplitude, mouseReact]);
 

@@ -1,7 +1,5 @@
 import { Phone, Package } from "lucide-react";
 import FluidGlassHero from "./fluid-glass-hero";
-import Iridescence from "./Iridescence";
-import AnimatedText, { AnimatedBlock } from "./AnimatedText";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -17,14 +15,8 @@ export default function HeroSection() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
       data-testid="hero-section"
     >
-      {/* WebGL Iridescence Background Effect */}
-      <div className="absolute inset-0">
-        <Iridescence 
-          color={[1, 0.8, 1]}
-          mouseReact={true}
-          amplitude={0.1}
-          speed={1.0}
-        />
+      {/* Gradient Background (WebGL Iridescence disabled for compatibility) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-indigo-900 to-pink-900">
       </div>
 
       {/* Gradient Overlay */}
@@ -46,33 +38,18 @@ export default function HeroSection() {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-4 sm:mb-6 leading-tight">
-          <AnimatedText 
-            text="Jalandhar's Best" 
-            delay={0}
-            wordDelay={0.08}
-          />
-          <span className="block">
-            <AnimatedText 
-              text="Digital Marketing" 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-pink-200"
-              delay={300}
-              wordDelay={0.08}
-            />
+          Jalandhar's Best
+          <span className="block bg-clip-text bg-gradient-to-r from-yellow-200 to-pink-200 text-white">
+            Digital Marketing
           </span>
           <span className="block">
-            <AnimatedText 
-              text="& Social Media Agency" 
-              delay={600}
-              wordDelay={0.08}
-            />
+            & Social Media Agency
           </span>
         </h1>
-        <AnimatedBlock delay={900}>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
-            Grow your brand with Pixocraft Digital – Affordable, Creative & Result-Oriented.
-          </p>
-        </AnimatedBlock>
-        <AnimatedBlock delay={1100} className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
+        <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
+          Grow your brand with Pixocraft Digital – Affordable, Creative & Result-Oriented.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
           <button 
             onClick={() => scrollToSection('contact')}
             className="bg-white text-primary font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-2xl flex items-center justify-center w-full sm:w-auto min-w-[200px]"
@@ -89,7 +66,7 @@ export default function HeroSection() {
             <Package className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             <span className="text-sm sm:text-base">View Packages</span>
           </button>
-        </AnimatedBlock>
+        </div>
       </div>
     </section>
   );

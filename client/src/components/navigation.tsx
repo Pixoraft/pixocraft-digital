@@ -15,9 +15,20 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold font-display gradient-text" data-testid="logo">
-              Pixocraft Digital
-            </h1>
+            <Link href="/">
+              <div className="flex items-center gap-2 cursor-pointer" data-testid="logo">
+                <div className="w-10 h-10 rounded-full bg-white p-1 flex items-center justify-center">
+                  <img 
+                    src="/attached_assets/image_1759294444044.png" 
+                    alt="Pixocraft Digital" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h1 className="text-2xl font-bold font-display gradient-text">
+                  Pixocraft Digital
+                </h1>
+              </div>
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
