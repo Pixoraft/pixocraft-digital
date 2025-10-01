@@ -24,7 +24,7 @@ export default function Footer() {
             </p>
             <div className="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
               <a 
-                href="https://facebook.com/pixocraftofficial" 
+                href="https://www.facebook.com/share/1HR9eWsb6N/" 
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                 data-testid="footer-facebook"
                 target="_blank"
@@ -37,7 +37,7 @@ export default function Footer() {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/15"></div>
               </a>
               <a 
-                href="https://instagram.com/pixocraftofficial" 
+                href="https://www.instagram.com/pixocraft_official?igsh=MW93ZTdzNHp5bnpxag==" 
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-pink-500 via-purple-600 to-pink-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                 data-testid="footer-instagram"
                 target="_blank"
@@ -50,7 +50,7 @@ export default function Footer() {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/15"></div>
               </a>
               <a 
-                href="https://youtube.com/@pixocraftofficial" 
+                href="https://youtube.com/@pixocraft_official?si=NSc7_hj_7YBqVbG3" 
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-red-500 via-red-600 to-red-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                 data-testid="footer-youtube"
                 target="_blank"
@@ -151,11 +151,11 @@ export default function Footer() {
             <ul className="space-y-1 sm:space-y-2 text-white/80 text-sm sm:text-base">
               <li className="flex items-center justify-center sm:justify-start">
                 <Phone className="text-primary mr-2 h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                <span className="text-xs sm:text-sm">+91 98765 43210</span>
+                <span className="text-xs sm:text-sm">+91 95018 47843</span>
               </li>
               <li className="flex items-center justify-center sm:justify-start">
                 <Mail className="text-primary mr-2 h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                <span className="text-xs sm:text-sm break-all">hello@pixocraft.com</span>
+                <span className="text-xs sm:text-sm break-all">pixocraftoffical@gmail.com</span>
               </li>
               <li className="flex items-center justify-center sm:justify-start">
                 <MapPin className="text-primary mr-2 h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />

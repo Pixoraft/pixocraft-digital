@@ -66,7 +66,7 @@ export default function HeroSection() {
       </div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-4 sm:mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-4 sm:mb-6 leading-tight">
           Jalandhar's Best
           <span className="block bg-clip-text bg-gradient-to-r from-yellow-200 to-pink-200 text-white">
             Digital Marketing
@@ -75,7 +75,7 @@ export default function HeroSection() {
             & Social Media Agency
           </span>
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
+        <p className="text-xl sm:text-2xl md:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
           Grow your brand with Pixocraft Digital – Affordable, Creative & Result-Oriented.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">

@@ -75,14 +75,14 @@ export default function ContactSection() {
 
   const openWhatsApp = () => {
     // Using a more reliable WhatsApp format
-    const phoneNumber = "917009340397";
+    const phoneNumber = "919501847843";
     const message = encodeURIComponent("Hi! I'm interested in your digital marketing services.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, "_blank");
   };
 
   const makeCall = () => {
-    window.open("tel:+917009340397", "_self");
+    window.open("tel:+919501847843", "_self");
   };
 
   return (
@@ -190,7 +190,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium text-sm sm:text-base">Phone</p>
-                    <p className="text-muted-foreground text-sm sm:text-base">+91 7009340397</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">+91 95018 47843</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -239,7 +239,7 @@ export default function ContactSection() {
               <h4 className="font-semibold mb-3 sm:mb-4 text-center text-sm sm:text-base">Follow Us</h4>
               <div className="flex justify-center flex-wrap gap-3 sm:gap-4">
                 <a 
-                  href="https://facebook.com/pixocraftofficial" 
+                  href="https://www.facebook.com/share/1HR9eWsb6N/" 
                   className="social-icon-3d w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-500 hover:scale-110 sm:hover:scale-125 hover:-translate-y-1 sm:hover:-translate-y-2"
                   data-testid="social-facebook"
                   target="_blank"
@@ -252,7 +252,7 @@ export default function ContactSection() {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/20"></div>
                 </a>
                 <a 
-                  href="https://instagram.com/pixocraftofficial" 
+                  href="https://www.instagram.com/pixocraft_official?igsh=MW93ZTdzNHp5bnpxag==" 
                   className="social-icon-3d w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-pink-500 via-purple-600 to-pink-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-500 hover:scale-110 sm:hover:scale-125 hover:-translate-y-1 sm:hover:-translate-y-2"
                   data-testid="social-instagram"
                   target="_blank"
@@ -278,7 +278,7 @@ export default function ContactSection() {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/20"></div>
                 </a>
                 <a 
-                  href="https://youtube.com/@pixocraftofficial" 
+                  href="https://youtube.com/@pixocraft_official?si=NSc7_hj_7YBqVbG3" 
                   className="social-icon-3d w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-red-500 via-red-600 to-red-800 text-white rounded-full flex items-center justify-center relative transform-gpu transition-all duration-500 hover:scale-110 sm:hover:scale-125 hover:-translate-y-1 sm:hover:-translate-y-2"
                   data-testid="social-youtube"
                   target="_blank"

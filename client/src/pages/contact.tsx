@@ -75,7 +75,7 @@ export default function Contact() {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = "917009340397";
+    const phoneNumber = "919501847843";
     const message = encodeURIComponent("Hi! I'm interested in your digital marketing services.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, "_blank");
@@ -85,14 +85,14 @@ export default function Contact() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      value: "+91 70093 40397",
-      action: () => window.open("tel:+917009340397", "_blank")
+      value: "+91 95018 47843",
+      action: () => window.open("tel:+919501847843", "_blank")
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      value: "info@pixocraftdigital.com",
-      action: () => window.open("mailto:info@pixocraftdigital.com", "_blank")
+      value: "pixocraftoffical@gmail.com",
+      action: () => window.open("mailto:pixocraftoffical@gmail.com", "_blank")
     },
     {
       icon: <MapPin className="h-6 w-6" />,
@@ -112,12 +112,12 @@ export default function Contact() {
     {
       icon: <SiFacebook className="text-blue-600" />,
       name: "Facebook",
-      url: "https://facebook.com/pixocraftdigital"
+      url: "https://www.facebook.com/share/1HR9eWsb6N/"
     },
     {
       icon: <SiInstagram className="text-pink-500" />,
       name: "Instagram", 
-      url: "https://instagram.com/pixocraftdigital"
+      url: "https://www.instagram.com/pixocraft_official?igsh=MW93ZTdzNHp5bnpxag=="
     },
     {
       icon: <SiLinkedin className="text-blue-700" />,
@@ -127,7 +127,7 @@ export default function Contact() {
     {
       icon: <SiYoutube className="text-red-600" />,
       name: "YouTube",
-      url: "https://youtube.com/@pixocraftdigital"
+      url: "https://youtube.com/@pixocraft_official?si=NSc7_hj_7YBqVbG3"
     },
     {
       icon: <SiSnapchat className="text-yellow-400" />,
