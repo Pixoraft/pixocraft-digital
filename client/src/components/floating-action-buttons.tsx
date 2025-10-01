@@ -7,10 +7,7 @@ export default function FloatingActionButtons() {
   const [showWhatsAppForm, setShowWhatsAppForm] = useState(false);
 
   const openWhatsApp = () => {
-    const phoneNumber = "917009340397";
-    const message = encodeURIComponent("Hi! I'm interested in your digital marketing services.");
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, "_blank");
+    setShowWhatsAppForm(true);
     setIsExpanded(false);
   };
 
@@ -46,7 +43,8 @@ export default function FloatingActionButtons() {
           <>
             <button 
               onClick={openEmail}
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 hover:bg-red-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 hover:bg-red-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center animate-in slide-in-from-bottom-2 fade-in duration-200"
+              style={{ animationDelay: '0ms' }}
               data-testid="floating-email"
               aria-label="Contact via Email"
             >
@@ -54,7 +52,8 @@ export default function FloatingActionButtons() {
             </button>
             <button 
               onClick={openWhatsApp}
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center animate-in slide-in-from-bottom-2 fade-in duration-200"
+              style={{ animationDelay: '50ms' }}
               data-testid="floating-whatsapp"
               aria-label="Contact via WhatsApp"
             >
@@ -62,7 +61,8 @@ export default function FloatingActionButtons() {
             </button>
             <button 
               onClick={makeCall}
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center animate-in slide-in-from-bottom-2 fade-in duration-200"
+              style={{ animationDelay: '100ms' }}
               data-testid="floating-call"
               aria-label="Make a phone call"
             >
@@ -74,8 +74,8 @@ export default function FloatingActionButtons() {
 
       {/* Email Form Popup */}
       {showEmailForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4" data-testid="email-form-popup" role="dialog" aria-modal="true">
-          <div className="bg-background border border-border rounded-lg p-4 sm:p-6 w-full max-w-sm sm:max-w-md">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4 animate-in fade-in duration-200" data-testid="email-form-popup" role="dialog" aria-modal="true">
+          <div className="bg-background border border-border rounded-lg p-4 sm:p-6 w-full max-w-sm sm:max-w-md animate-in zoom-in-95 slide-in-from-bottom-4 duration-300">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">Send Email</h2>
               <button 
@@ -148,8 +148,8 @@ export default function FloatingActionButtons() {
 
       {/* WhatsApp Form Popup */}
       {showWhatsAppForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4" data-testid="whatsapp-form-popup" role="dialog" aria-modal="true">
-          <div className="bg-background border border-border rounded-lg p-4 sm:p-6 w-full max-w-sm sm:max-w-md">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4 animate-in fade-in duration-200" data-testid="whatsapp-form-popup" role="dialog" aria-modal="true">
+          <div className="bg-background border border-border rounded-lg p-4 sm:p-6 w-full max-w-sm sm:max-w-md animate-in zoom-in-95 slide-in-from-bottom-4 duration-300">
             <div className="flex justify-between items-center mb-3 sm:mb-4">
               <h2 className="text-lg sm:text-xl font-semibold">Send WhatsApp Message</h2>
               <button 
