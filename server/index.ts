@@ -51,8 +51,9 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
-    // Serve static files from public folder in development mode
+    // Serve static files from public and attached_assets folders in development mode
     app.use(express.static('public'));
+    app.use('/attached_assets', express.static('attached_assets'));
     await setupVite(app, server);
   } else {
     serveStatic(app);
