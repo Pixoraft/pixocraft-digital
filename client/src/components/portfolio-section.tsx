@@ -66,7 +66,7 @@ export default function PortfolioSection() {
               />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 text-white">
-                    <h4 className="font-semibold text-lg">{item.title}</h4>
+                    <h3 className="font-semibold text-lg">{item.title}</h3>
                     <p className="text-sm text-white/80">{item.category}</p>
                   </div>
                 </div>

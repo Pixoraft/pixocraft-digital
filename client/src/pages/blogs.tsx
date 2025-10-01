@@ -120,6 +120,9 @@ export default function Blogs() {
 
       <section className="py-12 sm:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-center mb-8 sm:mb-12">
+            Latest Articles
+          </h2>
           {isLoading ? (
             <div className="flex justify-center items-center py-20">
               <Loader2 className="h-12 w-12 animate-spin text-primary" />

@@ -27,9 +27,9 @@ export default function Navigation() {
                     height="40"
                   />
                 </div>
-                <h1 className="text-2xl font-bold font-display gradient-text">
+                <span className="text-2xl font-bold font-display gradient-text">
                   Pixocraft Digital
-                </h1>
+                </span>
               </div>
             </Link>
           </div>
