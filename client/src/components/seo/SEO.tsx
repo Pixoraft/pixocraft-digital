@@ -56,21 +56,19 @@ export default function SEO({
       <meta name="twitter:image:alt" content={title} />
       <meta name="twitter:site" content="@pixocraft_official" />
       
-      {article && author && (
-        <>
-          <meta property="article:author" content={author} />
-          {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-        </>
-      )}
+      {article && author && <meta property="article:author" content={author} />}
+      {article && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {article && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
       
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow" />
       
       {structuredData.map((data, index) => (
-        <script key={index} type="application/ld+json">
-          {JSON.stringify(data)}
-        </script>
+        <script 
+          key={index} 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
       ))}
     </Helmet>
   );
