@@ -59,16 +59,17 @@ export default function ServicesSection() {
               key={index}
               animation="slideInUp"
               delay={index * 0.1}
+              className="h-full"
             >
               <div 
-                className="glass-card p-8 rounded-2xl service-card transition-all duration-300 hover:shadow-2xl"
+                className="glass-card p-8 rounded-2xl service-card transition-all duration-300 hover:shadow-2xl h-full flex flex-col"
                 data-testid={`service-card-${index}`}
               >
                 <div className={`text-4xl ${service.color} mb-6`}>
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold font-display mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed flex-1">
                   {service.description}
                 </p>
               </div>

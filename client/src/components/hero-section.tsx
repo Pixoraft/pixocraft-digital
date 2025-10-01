@@ -48,31 +48,31 @@ export default function HeroSection() {
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-4 sm:mb-6 leading-tight">
           <AnimatedText 
             text="Jalandhar's Best" 
-            delay={200}
-            wordDelay={0.1}
+            delay={0}
+            wordDelay={0.08}
           />
           <span className="block">
             <AnimatedText 
               text="Digital Marketing" 
               className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-pink-200"
-              delay={600}
-              wordDelay={0.12}
+              delay={300}
+              wordDelay={0.08}
             />
           </span>
           <span className="block">
             <AnimatedText 
               text="& Social Media Agency" 
-              delay={1000}
-              wordDelay={0.1}
+              delay={600}
+              wordDelay={0.08}
             />
           </span>
         </h1>
-        <AnimatedBlock delay={1400}>
+        <AnimatedBlock delay={900}>
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
             Grow your brand with Pixocraft Digital – Affordable, Creative & Result-Oriented.
           </p>
         </AnimatedBlock>
-        <AnimatedBlock delay={1800} className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
+        <AnimatedBlock delay={1100} className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
           <button 
             onClick={() => scrollToSection('contact')}
             className="bg-white text-primary font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-2xl flex items-center justify-center w-full sm:w-auto min-w-[200px]"

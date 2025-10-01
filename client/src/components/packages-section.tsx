@@ -96,9 +96,10 @@ export default function PackagesSection() {
               key={index}
               animation="slideInUp"
               delay={index * 0.15}
+              className="h-full"
             >
               <div 
-                className={`glass-card p-6 sm:p-8 rounded-2xl pricing-card transition-all duration-500 relative flex flex-col ${
+                className={`glass-card p-6 sm:p-8 rounded-2xl pricing-card transition-all duration-500 relative flex flex-col h-full ${
                   pkg.isPopular ? 'border-2 border-primary' : ''
                 }`}
                 data-testid={`package-card-${pkg.name.toLowerCase()}`}
