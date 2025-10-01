@@ -4,6 +4,8 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import SEO from "@/components/seo/SEO";
+import { getOrganizationSchema, getLocalBusinessSchema, getFAQSchema } from "@/lib/structured-data";
 import { Phone, Mail, MapPin, MessageSquare, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -34,6 +36,31 @@ export default function Contact() {
   });
 
   const { toast } = useToast();
+  
+  const faqData = [
+    {
+      question: "How quickly can you start working on my project?",
+      answer: "We can typically start within 24-48 hours after our initial consultation and agreement on project scope."
+    },
+    {
+      question: "Do you provide reports on the work you do?",
+      answer: "Yes! We provide regular reports (weekly, bi-weekly, or monthly) depending on your plan, showing growth metrics and engagement analytics."
+    },
+    {
+      question: "Can I cancel or change my plan anytime?",
+      answer: "Absolutely! We offer flexible plans that can be modified or cancelled with 30 days notice. No long-term contracts required."
+    },
+    {
+      question: "Do you work with businesses outside Jalandhar?",
+      answer: "Yes! While we're based in Jalandhar, we work with clients across India and internationally through digital collaboration."
+    }
+  ];
+  
+  const structuredData = [
+    getOrganizationSchema(),
+    getLocalBusinessSchema(),
+    getFAQSchema(faqData)
+  ];
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
@@ -138,6 +165,13 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
+      <SEO
+        title="Contact Us - Get Free Consultation | Digital Marketing Jalandhar"
+        description="Contact Pixocraft Digital for professional digital marketing services in Jalandhar. Call +91-95018-47843 or email us for a FREE consultation. Available Mon-Sat, 9 AM - 6 PM."
+        keywords="contact digital marketing agency Jalandhar, digital marketing consultation, social media agency contact, Pixocraft Digital contact, marketing services Jalandhar contact"
+        canonical="/contact"
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Hero Section */}

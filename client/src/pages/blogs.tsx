@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { Helmet } from "react-helmet";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import BlogCard from "@/components/blog-card";
+import SEO from "@/components/seo/SEO";
+import { getOrganizationSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 import { Search, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -22,6 +23,16 @@ interface Blog {
 
 export default function Blogs() {
   const [searchQuery, setSearchQuery] = useState("");
+  
+  const siteUrl = typeof window !== "undefined" ? window.location.origin : "https://pixocraft.in";
+  
+  const structuredData = [
+    getOrganizationSchema(),
+    getBreadcrumbSchema([
+      { name: "Home", url: `${siteUrl}/` },
+      { name: "Blog", url: `${siteUrl}/blogs` }
+    ])
+  ];
 
   const { data: blogs, isLoading } = useQuery<Blog[]>({
     queryKey: ['/data/blogs.json'],
@@ -43,15 +54,13 @@ export default function Blogs() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
-      <Helmet>
-        <title>Digital Marketing Blog - Tips & Insights | Pixocraft Digital</title>
-        <meta name="description" content="Explore our blog for the latest digital marketing tips, social media strategies, and business growth insights specifically for Jalandhar and Punjab businesses." />
-        <meta property="og:title" content="Digital Marketing Blog - Pixocraft Digital" />
-        <meta property="og:description" content="Expert insights on digital marketing, social media, and business growth for Punjab businesses." />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href={`${window.location.origin}/blogs`} />
-      </Helmet>
-
+      <SEO
+        title="Digital Marketing Blog - Tips & Insights for Jalandhar Businesses"
+        description="Explore our blog for the latest digital marketing tips, social media strategies, YouTube marketing, video editing, and business growth insights for Jalandhar and Punjab businesses."
+        keywords="digital marketing blog, social media tips, YouTube marketing guide, video editing tutorials, Instagram marketing tips, Facebook marketing strategies, local SEO tips Jalandhar, digital marketing insights Punjab"
+        canonical="/blogs"
+        structuredData={structuredData}
+      />
       <Navigation />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">

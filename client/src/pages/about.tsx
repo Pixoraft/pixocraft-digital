@@ -1,10 +1,17 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import SEO from "@/components/seo/SEO";
+import { getOrganizationSchema, getLocalBusinessSchema } from "@/lib/structured-data";
 import { useLocation } from "wouter";
 import { Gift, Users, Target, Award, Heart, CheckCircle } from "lucide-react";
 
 export default function About() {
   const [, setLocation] = useLocation();
+  
+  const structuredData = [
+    getOrganizationSchema(),
+    getLocalBusinessSchema()
+  ];
 
   const goToContact = () => {
     setLocation('/contact');
@@ -42,6 +49,13 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
+      <SEO
+        title="About Us - Local Digital Marketing Experts in Jalandhar"
+        description="Pixocraft Digital is a leading digital marketing agency in Jalandhar with 3+ years of experience. We've helped 50+ businesses grow their online presence with transparent pricing and proven results."
+        keywords="digital marketing agency Jalandhar, about Pixocraft Digital, best marketing agency Punjab, local digital marketing experts, social media agency Jalandhar, digital marketing company Punjab"
+        canonical="/about"
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Hero Section */}

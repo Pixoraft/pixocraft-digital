@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { Helmet } from "react-helmet";
 import { useRoute, Link } from "wouter";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import SEO from "@/components/seo/SEO";
+import { getArticleSchema, getOrganizationSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 import { Calendar, User, Tag, ArrowLeft, Loader2, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -88,24 +89,39 @@ export default function BlogDetail() {
     );
   }
 
+  const siteUrl = typeof window !== "undefined" ? window.location.origin : "https://pixocraft.in";
+  const blogUrl = `${siteUrl}/blog/${blog.slug}`;
+  
+  const structuredData = [
+    getOrganizationSchema(),
+    getArticleSchema({
+      title: blog.title,
+      description: blog.excerpt,
+      image: blog.image,
+      datePublished: blog.date,
+      author: blog.author,
+      url: blogUrl
+    }),
+    getBreadcrumbSchema([
+      { name: "Home", url: `${siteUrl}/` },
+      { name: "Blog", url: `${siteUrl}/blogs` },
+      { name: blog.title, url: blogUrl }
+    ])
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
-      <Helmet>
-        <title>{blog.title} | Pixocraft Digital Blog</title>
-        <meta name="description" content={blog.excerpt} />
-        <meta property="og:title" content={blog.title} />
-        <meta property="og:description" content={blog.excerpt} />
-        <meta property="og:image" content={blog.image} />
-        <meta property="og:type" content="article" />
-        <meta property="article:published_time" content={blog.date} />
-        <meta property="article:author" content={blog.author} />
-        <meta property="article:section" content={blog.category} />
-        {blog.tags.map((tag, index) => (
-          <meta key={index} property="article:tag" content={tag} />
-        ))}
-        <link rel="canonical" href={`${window.location.origin}/blog/${blog.slug}`} />
-      </Helmet>
-
+      <SEO
+        title={blog.title}
+        description={blog.excerpt}
+        keywords={`${blog.tags.join(", ")}, digital marketing, ${blog.category}`}
+        canonical={`/blog/${blog.slug}`}
+        article={true}
+        author={blog.author}
+        publishedTime={blog.date}
+        ogImage={blog.image}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       <article className="pt-24 sm:pt-32">

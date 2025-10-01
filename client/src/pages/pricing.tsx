@@ -1,11 +1,32 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import PackagesSection from "@/components/packages-section";
+import SEO from "@/components/seo/SEO";
+import { getOrganizationSchema, getServiceSchema } from "@/lib/structured-data";
 import { Smartphone, Palette, TrendingUp } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function Pricing() {
   const [, setLocation] = useLocation();
+  
+  const structuredData = [
+    getOrganizationSchema(),
+    getServiceSchema(
+      "Social Media Management",
+      "Professional social media management services for Instagram, Facebook, LinkedIn, and YouTube. Monthly plans starting from ₹1,500.",
+      "1500"
+    ),
+    getServiceSchema(
+      "Video Editing Services",
+      "High-quality video editing and reel creation for social media platforms. Prices from ₹500 per video.",
+      "500"
+    ),
+    getServiceSchema(
+      "Digital Marketing Services",
+      "Complete digital marketing solutions including SEO, Google My Business optimization, and social media advertising setup.",
+      "1000"
+    )
+  ];
 
   const goToContact = () => {
     setLocation('/contact');
@@ -107,6 +128,13 @@ export default function Pricing() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
+      <SEO
+        title="Pricing & Packages - Affordable Digital Marketing Services"
+        description="Transparent and affordable pricing for social media management, video editing, graphic design, and digital marketing services in Jalandhar. Starting from ₹1,500/month. No hidden costs!"
+        keywords="digital marketing pricing Jalandhar, social media management cost, video editing prices Punjab, affordable marketing packages, Instagram management pricing, Facebook ads cost, YouTube marketing rates"
+        canonical="/pricing"
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Hero Section */}
