@@ -34,10 +34,10 @@ export default function BlogDetail() {
   });
 
   const blog = blogs?.find(b => b.slug === params?.slug);
-  const relatedBlogs = blogs?.filter(b => 
+  const relatedBlogs = blog ? blogs?.filter(b => 
     b.slug !== params?.slug && 
-    (b.category === blog?.category || b.tags.some(tag => blog?.tags.includes(tag)))
-  ).slice(0, 3);
+    (b.category === blog.category || b.tags.some(tag => blog.tags.includes(tag)))
+  ).slice(0, 3) : [];
 
   const handleShare = async () => {
     const url = window.location.href;
