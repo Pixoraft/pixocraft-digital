@@ -65,6 +65,16 @@ export default function Navigation() {
                   Pricing
                 </span>
               </Link>
+              <Link href="/blogs">
+                <span 
+                  className={`transition-colors duration-200 font-medium ${
+                    location === '/blogs' || location.startsWith('/blog/') ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="nav-blogs"
+                >
+                  Blogs
+                </span>
+              </Link>
               <Link href="/contact">
                 <span 
                   className={`transition-colors duration-200 font-medium ${
@@ -123,6 +133,16 @@ export default function Navigation() {
                   data-testid="mobile-nav-pricing"
                 >
                   Pricing
+                </span>
+              </Link>
+              <Link href="/blogs" onClick={closeMenu}>
+                <span 
+                  className={`block px-3 py-2 transition-colors duration-200 font-medium w-full text-left ${
+                    location === '/blogs' || location.startsWith('/blog/') ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  }`}
+                  data-testid="mobile-nav-blogs"
+                >
+                  Blogs
                 </span>
               </Link>
               <Link href="/contact" onClick={closeMenu}>
