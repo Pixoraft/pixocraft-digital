@@ -4,8 +4,11 @@ import {
   SiYoutube 
 } from "react-icons/si";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Link, useLocation } from "wouter";
 
 export default function Footer() {
+  const [location] = useLocation();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -68,40 +71,64 @@ export default function Footer() {
             <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Services</h4>
             <ul className="space-y-1 sm:space-y-2 text-white/80 text-sm sm:text-base">
               <li>
-                <button 
-                  onClick={() => scrollToSection('services')}
-                  className="hover:text-primary transition-colors"
+                <a 
+                  href="/#services"
+                  onClick={(e) => {
+                    if (location === '/') {
+                      e.preventDefault();
+                      scrollToSection('services');
+                    }
+                  }}
+                  className="hover:text-primary transition-colors cursor-pointer"
                   data-testid="footer-service-social"
                 >
                   Social Media Management
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('services')}
-                  className="hover:text-primary transition-colors"
+                <a 
+                  href="/#services"
+                  onClick={(e) => {
+                    if (location === '/') {
+                      e.preventDefault();
+                      scrollToSection('services');
+                    }
+                  }}
+                  className="hover:text-primary transition-colors cursor-pointer"
                   data-testid="footer-service-video"
                 >
                   Video Editing
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('services')}
-                  className="hover:text-primary transition-colors"
+                <a 
+                  href="/#services"
+                  onClick={(e) => {
+                    if (location === '/') {
+                      e.preventDefault();
+                      scrollToSection('services');
+                    }
+                  }}
+                  className="hover:text-primary transition-colors cursor-pointer"
                   data-testid="footer-service-ads"
                 >
                   Ad Campaigns
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('services')}
-                  className="hover:text-primary transition-colors"
+                <a 
+                  href="/#services"
+                  onClick={(e) => {
+                    if (location === '/') {
+                      e.preventDefault();
+                      scrollToSection('services');
+                    }
+                  }}
+                  className="hover:text-primary transition-colors cursor-pointer"
                   data-testid="footer-service-website"
                 >
                   Website Development
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -109,40 +136,32 @@ export default function Footer() {
             <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
             <ul className="space-y-1 sm:space-y-2 text-white/80 text-sm sm:text-base">
               <li>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="hover:text-primary transition-colors"
-                  data-testid="footer-link-about"
-                >
-                  About Us
-                </button>
+                <Link href="/about">
+                  <span className="hover:text-primary transition-colors cursor-pointer" data-testid="footer-link-about">
+                    About Us
+                  </span>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('packages')}
-                  className="hover:text-primary transition-colors"
-                  data-testid="footer-link-pricing"
-                >
-                  Pricing
-                </button>
+                <Link href="/pricing">
+                  <span className="hover:text-primary transition-colors cursor-pointer" data-testid="footer-link-pricing">
+                    Pricing
+                  </span>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('portfolio')}
-                  className="hover:text-primary transition-colors"
-                  data-testid="footer-link-portfolio"
-                >
-                  Portfolio
-                </button>
+                <Link href="/blogs">
+                  <span className="hover:text-primary transition-colors cursor-pointer" data-testid="footer-link-blog">
+                    Blog
+                  </span>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="hover:text-primary transition-colors"
-                  data-testid="footer-link-contact"
-                >
-                  Contact
-                </button>
+                <Link href="/contact">
+                  <span className="hover:text-primary transition-colors cursor-pointer" data-testid="footer-link-contact">
+                    Contact
+                  </span>
+                </Link>
               </li>
             </ul>
           </div>
