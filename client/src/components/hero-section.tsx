@@ -1,7 +1,28 @@
 import { Phone, Package } from "lucide-react";
+import { useEffect, useState } from "react";
 import FluidGlassHero from "./fluid-glass-hero";
+import Iridescence from "./Iridescence";
 
 export default function HeroSection() {
+  const [showIridescence, setShowIridescence] = useState(false);
+
+  useEffect(() => {
+    const supportsWebGL = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        return !!(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+      } catch (e) {
+        return false;
+      }
+    };
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (supportsWebGL() && !prefersReducedMotion) {
+      setShowIridescence(true);
+    }
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -15,8 +36,16 @@ export default function HeroSection() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
       data-testid="hero-section"
     >
-      {/* Gradient Background (WebGL Iridescence disabled for compatibility) */}
+      {/* WebGL Iridescence Background Effect with Fallback */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-indigo-900 to-pink-900">
+        {showIridescence && (
+          <Iridescence 
+            color={[1, 0.8, 1]}
+            mouseReact={true}
+            amplitude={0.1}
+            speed={1.0}
+          />
+        )}
       </div>
 
       {/* Gradient Overlay */}

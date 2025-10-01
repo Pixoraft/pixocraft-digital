@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import navLogo from "@assets/image_1759294444044.png";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Navigation() {
               <div className="flex items-center gap-2 cursor-pointer" data-testid="logo">
                 <div className="w-10 h-10 rounded-full bg-white p-1 flex items-center justify-center">
                   <img 
-                    src="/attached_assets/image_1759294444044.png" 
+                    src={navLogo} 
                     alt="Pixocraft Digital" 
                     className="w-full h-full object-contain"
                   />
