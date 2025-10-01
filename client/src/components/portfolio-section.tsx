@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/hooks/useScrollReveal";
+
 export default function PortfolioSection() {
   const portfolioItems = [
     {
@@ -47,23 +49,28 @@ export default function PortfolioSection() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioItems.map((item, index) => (
-            <div 
+            <ScrollReveal
               key={index}
-              className="group relative overflow-hidden rounded-2xl"
-              data-testid={`portfolio-item-${index}`}
+              animation="slideInUp"
+              delay={index * 0.1}
             >
+              <div 
+                className="group relative overflow-hidden rounded-2xl"
+                data-testid={`portfolio-item-${index}`}
+              >
               <img 
                 src={item.image} 
                 alt={item.title} 
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h4 className="font-semibold text-lg">{item.title}</h4>
-                  <p className="text-sm text-white/80">{item.category}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h4 className="font-semibold text-lg">{item.title}</h4>
+                    <p className="text-sm text-white/80">{item.category}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

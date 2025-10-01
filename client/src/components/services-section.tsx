@@ -1,4 +1,5 @@
 import { Facebook, Video, Image, Megaphone, Code, TrendingUp } from "lucide-react";
+import { ScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function ServicesSection() {
   const services = [
@@ -54,19 +55,24 @@ export default function ServicesSection() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
+            <ScrollReveal 
               key={index}
-              className="glass-card p-8 rounded-2xl service-card transition-all duration-300 hover:shadow-2xl"
-              data-testid={`service-card-${index}`}
+              animation="slideInUp"
+              delay={index * 0.1}
             >
-              <div className={`text-4xl ${service.color} mb-6`}>
-                {service.icon}
+              <div 
+                className="glass-card p-8 rounded-2xl service-card transition-all duration-300 hover:shadow-2xl"
+                data-testid={`service-card-${index}`}
+              >
+                <div className={`text-4xl ${service.color} mb-6`}>
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold font-display mb-4">{service.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold font-display mb-4">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

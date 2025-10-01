@@ -1,5 +1,6 @@
 import { Check, Gift } from "lucide-react";
 import { useLocation } from "wouter";
+import { ScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function PackagesSection() {
   const [, setLocation] = useLocation();
@@ -91,13 +92,17 @@ export default function PackagesSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-sm md:max-w-none mx-auto">
           {packages.map((pkg, index) => (
-            <div 
+            <ScrollReveal
               key={index}
-              className={`glass-card p-6 sm:p-8 rounded-2xl pricing-card transition-all duration-500 relative flex flex-col ${
-                pkg.isPopular ? 'border-2 border-primary' : ''
-              }`}
-              data-testid={`package-card-${pkg.name.toLowerCase()}`}
+              animation="slideInUp"
+              delay={index * 0.15}
             >
+              <div 
+                className={`glass-card p-6 sm:p-8 rounded-2xl pricing-card transition-all duration-500 relative flex flex-col ${
+                  pkg.isPopular ? 'border-2 border-primary' : ''
+                }`}
+                data-testid={`package-card-${pkg.name.toLowerCase()}`}
+              >
               {pkg.isPopular && (
                 <div className="popular-badge text-white text-sm font-semibold px-4 py-2 rounded-full absolute -top-3 left-1/2 transform -translate-x-1/2">
                   Most Popular
@@ -136,6 +141,7 @@ export default function PackagesSection() {
                 {pkg.buttonText}
               </button>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
