@@ -8,7 +8,6 @@ import PortfolioSection from "@/components/portfolio-section";
 import WhyChooseUsSection from "@/components/why-choose-us-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
-import FloatingActionButtons from "@/components/floating-action-buttons";
 import SEO from "@/components/seo/SEO";
 import { getOrganizationSchema, getLocalBusinessSchema, getWebsiteSchema } from "@/lib/structured-data";
 
@@ -38,7 +37,6 @@ export default function Home() {
       <WhyChooseUsSection />
       <ContactSection />
       <Footer />
-      <FloatingActionButtons />
     </div>
   );
 }
