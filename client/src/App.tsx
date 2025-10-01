@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import LoadingScreen from "@/components/loading-screen";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import FloatingActionButtons from "@/components/floating-action-buttons";
 import Home from "@/pages/home";
 import Pricing from "@/pages/pricing";
 import About from "@/pages/about";
@@ -44,6 +45,7 @@ function App() {
         <LoadingScreen />
         <Toaster />
         <Router />
+        <FloatingActionButtons />
       </TooltipProvider>
     </QueryClientProvider>
   );
