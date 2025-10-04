@@ -23,7 +23,7 @@ export default function PackagesSection() {
       subtitle: "Perfect for local shops & startups starting their digital presence",
       features: [
         "Facebook + Instagram Handling",
-        "8 Creative Posts + 4 Engaging Reels per month",
+        "9 Creative Posts + 6 Engaging Reels per month",
         "Captions + Trending Hashtags",
         "Stories on FB, Instagram & Snapchat (3–4 per week)",
         "Basic Meta Ads (FB + Insta) + Snapchat Ads",
@@ -42,7 +42,7 @@ export default function PackagesSection() {
       subtitle: "For small & medium businesses ready to grow their brand",
       features: [
         "FB + Insta Handling",
-        "15 High-Quality Posts + 8 Reels",
+        "20 High-Quality Posts + 10 Reels",
         "Graphics + Stories (custom designed)",
         "Meta Ads (FB + Insta) + Snapchat Ads with basic targeting",
         "YouTube Handling → 4 Videos uploaded + SEO",
@@ -62,7 +62,7 @@ export default function PackagesSection() {
       subtitle: "For brands wanting full-service professional marketing",
       features: [
         "FB + Insta + Snapchat + YouTube Handling",
-        "25+ Posts + 12 Premium Reels + Daily Custom Stories",
+        "30 Posts + 15 Premium Reels + Daily Custom Stories",
         "Advanced Meta Ads (FB + Insta) + Snapchat Ads targeting leads & sales",
         "YouTube Handling → 7 Videos (upload, SEO, custom thumbnails)",
         "Weekly Reports + Engagement Replies (DMs & comments management)",
