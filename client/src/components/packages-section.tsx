@@ -46,7 +46,7 @@ export default function PackagesSection() {
         "Graphics + Stories (custom designed)",
         "Meta Ads (FB + Insta) + Snapchat Ads with basic targeting",
         "YouTube Handling → 4 Videos uploaded + SEO",
-        "Daily Stories on FB, Instagram & Snapchat",
+        "5 Stories on FB, Instagram & Snapchat /month",
         "Bi-weekly Growth Report + Strategy Call",
         "Multi-platform daily stories for real engagement"
       ],
@@ -57,7 +57,7 @@ export default function PackagesSection() {
     },
     {
       name: "Premium Plan",
-      price: "₹29,999",
+      price: "₹39,999",
       period: "/month",
       subtitle: "For brands wanting full-service professional marketing",
       features: [
