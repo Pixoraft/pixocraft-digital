@@ -37,7 +37,7 @@ export default function PackagesSection() {
     },
     {
       name: "Growth Plan",
-      price: "₹20,999",
+      price: "₹19 999",
       period: "/month",
       subtitle: "For small & medium businesses ready to grow their brand",
       features: [
