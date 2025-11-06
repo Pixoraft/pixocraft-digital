@@ -18,7 +18,7 @@ export default function PackagesSection() {
   const packages = [
     {
       name: "Starter Plan",
-      price: "₹4,999",
+      price: "₹9,999",
       period: "/month",
       subtitle: "Perfect for local shops & startups starting their digital presence",
       features: [
@@ -37,7 +37,7 @@ export default function PackagesSection() {
     },
     {
       name: "Growth Plan",
-      price: "₹9,999",
+      price: "₹20,999",
       period: "/month",
       subtitle: "For small & medium businesses ready to grow their brand",
       features: [
@@ -57,7 +57,7 @@ export default function PackagesSection() {
     },
     {
       name: "Premium Plan",
-      price: "₹19,999",
+      price: "₹29,999",
       period: "/month",
       subtitle: "For brands wanting full-service professional marketing",
       features: [
